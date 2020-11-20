@@ -1,6 +1,6 @@
 import { UserModel } from '../../models/user';
 import { PasswordModel } from '../../models/password';
-import { match } from 'assert';
+import { TokenModel } from '../../models/token';
 
 export function post( app:any ){
 
@@ -27,8 +27,11 @@ export function post( app:any ){
             return;
         }
 
-        response.status(200).send({
-            fullName: matchedUser.fullName
+        response.status(201).send({
+            token: TokenModel.generateAccessToken({
+                username,
+                fullName: matchedUser.fullName
+            })
         });
 
     });

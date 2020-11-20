@@ -18,12 +18,24 @@ export interface IUser {
     fullName: string;
 }
 
+export interface IUserNoPassword {
+    username: string;
+    fullName: string;
+}
+
 export const UserModel = {
 
     getAll: ():IUser[] => {
         const users = JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
         console.log('UserModel.getAll', users);
         return users;
+    },
+
+    getAllWithoutPassword: ():IUserNoPassword[] => {
+        return UserModel.getAll().map(( user:IUser ) => {
+            delete user.password;
+            return user;
+        });
     },
 
     setAll: ( users:IUser[] ) => {
