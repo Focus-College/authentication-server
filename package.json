@@ -1,0 +1,19 @@
+{
+  "name": "authentication-server",
+  "version": "1.0.0",
+  "description": "Express Authentication Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Focus-College/authentication-server.git"
+  },
+  "author": "Bradley Holbrook (Instructor)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Focus-College/authentication-server/issues"
+  },
+  "homepage": "https://github.com/Focus-College/authentication-server#readme"
+}
